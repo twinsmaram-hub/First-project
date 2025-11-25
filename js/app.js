@@ -57,9 +57,9 @@ let gameDuration=10;
 let remaningTimer=10;
 let copyAllBrand=[];
 let currentBrandObj;
-  const page1Element=document.querySelector('.page1')
-  const page2Element=document.querySelector('.page2')
-  const page3Element=document.querySelector('.page3')
+const page1Element = document.getElementById('page1'); 
+const page2Element = document.getElementById('page2'); 
+const page3Element = document.getElementById('page3');
 
 const imageProdElement = document.querySelector('#image-prod');
   const starterElement=document.querySelector('#starter')
@@ -70,12 +70,33 @@ const imageProdElement = document.querySelector('#image-prod');
   const scoreNumElement=document.querySelector('#score-number')
   const returnElement=document.querySelector('#return')
   const timerElement=document.querySelector('#timer')
+  const openBtnEle = document.querySelector("#open-rule") 
+  const closeBtnEle = document.querySelector('#close-rule')
+
+  const soundCurrect=document.getElementById('currect')
+  const soundWrong=document.getElementById('wrong')
+  const bycottsound=document.getElementById('Boycott')
+  const firstimage=document.getElementById('iby')
+  const pupElement=document.getElementById('pup')
+ 
+
+  starterElement.addEventListener('click',sart)
+  yesBotElement.addEventListener('click',YES)
+  noBotElement.addEventListener('click',NO)
+  returnElement.addEventListener('click',returnfun)
+  firstimage.addEventListener('click',() => {  bycottsound.play()})
+  openBtnEle.addEventListener('click',showPup)
+  closeBtnEle.addEventListener('click',closePup)
 
 
-starterElement.addEventListener('click',sart)
 
-returnElement.addEventListener('click',returnfun)
 
+function showPup(){
+    pupElement.classList.add('open')
+}
+function closePup(){
+     pupElement.classList.remove('open')
+}
 
 function showPage(num){
     const pageElement=document.querySelectorAll('.page').forEach(onePage=>onePage.classList.remove('active'))
@@ -108,7 +129,6 @@ function updateTimer(){
 
 }
 
-
 function mainGames(){
     if(copyAllBrand.length===0){
        clearInterval(timerGame)
@@ -135,12 +155,12 @@ function YES (){
         score+=1
        remaningTimer +=1 
        scoreElement.textContent=score;
-     
+       soundCurrect.play()
        updateTimer()
     }
     else{
            remaningTimer --
-        
+          soundWrong.play()
 
            updateTimer()
 
@@ -160,10 +180,12 @@ function NO (){
         scoreElement.textContent=score;
        remaningTimer +=1 
        scoreElement.textContent=score;
+        soundCurrect.play()
        updateTimer();
     }
     else{
            remaningTimer --
+           soundWrong.play()
           updateTimer()
 
     }
