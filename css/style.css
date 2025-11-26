@@ -257,6 +257,7 @@ img {
         0px 8px 15px rgba(0, 0, 0, 0.5),
         inset 0 0 10px rgba(0, 0, 0, 0.1);   
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    filter: none !important;
 }
 
 img:active {
@@ -275,6 +276,7 @@ img:hover {
     height: 100PX;
     margin-top: 10px; 
     margin-bottom:  10px;
+    
 }
 
 @keyframes colorchange{
