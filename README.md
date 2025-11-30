@@ -36,6 +36,17 @@ Upon starting the game for the first time, an initial popup window appears (ofte
 * ### The Most Fun Part
  >>>>The most fun part was adding the sound effects to the pictures.
 
+## Key Game Function 
+
+| Function Name | Purpose and Key Action | Supported Features |
+| :--- | :--- | :--- |
+| `sart()` | Starts the game: initializes time, resets the score, and navigates to the game page (`showPage(2)`). | Game Start |
+| `mainGames()` | Main game logic: selects a new random brand, updates the UI, and starts the timer. | Core Game Logic |
+| `startTimer()` | Manages the time countdown and ends the game when the timer reaches zero. | Timing / Timer Control |
+| `YES()` / `NO()` | Processes the player's answer: checks the brand (boycotted/alternative), updates score/time, and plays sound effects. | Answer Logic / Sounds |
+| `showPup()` / `closePup()` | Controls the display of the Rules popup and stops/plays the rule audio. | Rules Popup / Audio |
+| `showPage(num)` | Manages the display of different game screens (e.g., home, game, end screen). | Page Navigation |
+| `returnfun()` | Resets the game and score, returning the user to the starting page. | Game Reset |
 
 ## My future plan
  is to integrate it with the educational system. For example, it can be used in schools for quick quizzes and study revision.
